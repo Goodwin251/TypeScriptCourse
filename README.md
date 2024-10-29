@@ -1,64 +1,97 @@
-# UniversityScheduleTS
-
+# TaskManagerTS
 Repository for TypeScript course.
 
-You can check functionality on [github pages](https://goodwin251.github.io/UniversityScheduleTS/).
-
-## Created by Solodkyi Yaroslav, student PD-42
-
+You can check functionality on github pages: https://goodwin251.github.io/TaskManagerTS/
+### Created by Solodkyi Yaroslav, student PD-42
 ___
-
-There is simple University schedule program that can be launced on NodeJS and in browser, where you can add and delete lections, professors, classrooms and courses.
+There is simple Task Manager program that can be launced on NodeJS and in browser with realisation of same functions.
 
 **Branches**:
-
 - *main*
+- *develop* - for merging features
+- *js-to-ts* - added TaskManager base and translate it from JavaScript to TypeScript.
+- *feature/tsconfig* - added http-server and NodeJS, confiugred TypeScript compilation, take from index.js export classes and export type.
+- *feature/module* - refactor of code to make more clear structure of project with modules
 
 ## Code description
 
-### UniSchedule
+### Task.ts
+
 
 ```typescript
-//Verify is lesson valid with use of custom conflict types
-validateLesson(lesson: Lesson): ScheduleConflict | null
+//Mark task completed.
+markAsCompleted(): void
+```
+```typescript
+//Update priorty between 'low', 'normal' or 'high'
+updatePriority(newPriority: Priority): void
+```
+```typescript
+//To String
+toString(): string
+```
+
+### TaskManager.ts
+
+```typescript
+//Add new task to tasks[] in TaskManager class.
+addTask(title: string, description: string, priority: Priority)
+```
+```typescript
+//Remove task from tasks[]
+removeTask(title: string): void
+```
+```typescript
+//Search task by title and call markAsCompleted() from Task
+markTaskAsCompleted(title: string): void
+```
+```typescript
+//Search and update priorty in task
+updateTaskPriority(title: string, newPriority: Priority): void
+```
+```typescript
+//Just print all tasks in console
+listTasks(): void
+```
+```typescript
+//List all tasks that still pending
+listPendingTasks(): void 
+```
+```typescript
+//List all tasks that completed
+listCompletedTasks(): void
+```
+```typescript
+//Clear tasks[]
+clearAllTasks(): void
+```
+### index.ts
+Depends on `if` below program change functional. If global variable `window` is `undefined` that means program launched not in the browser. Therefore it will just call functions for console, listed above.
+```typescript
+//If true = Node.Js | false = launched in browser
+if (typeof window == "undefined") 
+```
+```typescript
+//Add task in row to taskTableBody
+function addTaskRow(name: string, description: string, priority: Priority, createdAt: string, completed: string)
+```
+```typescript
+//Called every time once we need to render UI on page
+function renderTasks(): void
 ```
 
 ```typescript
-//Add Proffesor
-addProfessor(professor: Professor): void
+//Called when user press button to clear all tasks that were completed.
+function clearCompletedTasks(): void
 ```
-
+#### Listeners
 ```typescript
-//Add Lesson
-addLesson(lesson: Lesson): boolean
-```
+//Called when user click on Completed cell, marking task completed. 
+row.children[4]?.addEventListener('click', () => {...})
 
-```typescript
-//Change classroom for course
-reassignClassroom(lessonId: number, newClassroomNumber: string): boolean
-```
+//Called to add new Task to table
+addTaskBtn.addEventListener('click', () => {...})
 
-```typescript
-//Cancel Lesson
-cancelLesson(lessonId: number): void
-```
-
-```typescript
-// Find all availbe classrooms
-findAvailableClassrooms(timeSlot: TimeSlot, dayOfWeek: DayOfWeek): string[]
-```
-
-```typescript
-//Get proffesor schedule
-getProfessorSchedule(professorId: number): Lesson[]
-```
-
-```typescript
-//Check how much classroom used in %
-getClassroomUtilization(classroomNumber: string): number
-```
-
-```typescript
-//Get most popular course type
-getMostPopularCourseType(): CourseType
+//Called to clear all completed tasks
+clearCompletedBtn?.addEventListener('click', () => {...})
 ```

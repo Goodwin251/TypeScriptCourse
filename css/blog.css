@@ -1,11 +1,5 @@
 /* stylelint-disable selector-list-comma-newline-after */
 
-.center-block{
-margin:auto;
-max-width: 700px;
-background-color: white;
-}
-
 .blog-header {
   line-height: 1;
   border-bottom: 1px solid #e5e5e5;
@@ -22,9 +16,6 @@ background-color: white;
 
 h1, h2, h3, h4, h5, h6 {
   font-family: "Playfair Display", Georgia, "Times New Roman", serif/*rtl:Amiri, Georgia, "Times New Roman", serif*/;
-}
-h1{
-  text-align: center;
 }
 
 .display-4 {
@@ -101,7 +92,6 @@ h1{
  * Footer
  */
 .blog-footer {
-  margin-top: 2.5rem;
   padding: 2.5rem 0;
   color: #727272;
   text-align: center;

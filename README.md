@@ -1,6 +1,6 @@
-# TypeScript CMS Type System (PR-6)
+# Lab 5 - TypeScript CMS Type System
 
-Branch of 6 practice work for TypeScript course.
+Branch of 5 laboratory work for TypeScript course.
 
 This repository demonstrates a CMS (Content Management System) type system built using TypeScript. Below is a detailed list of all functions and methods split by files with short comments describing their functionality.
 

@@ -1,0 +1,195 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="">
+  <meta name="author" content="Yaroslav Solodkyi, Mark Otto, Jacob Thornton, and Bootstrap contributors">
+  <meta name="generator" content="Hugo 0.84.0">
+  <title>TypeScript TaskManager</title>
+
+  <link rel="canonical" href="https://getbootstrap.com/docs/5.0/examples/blog/">
+
+
+
+  <!-- Bootstrap core CSS -->
+  <link href="css/bootstrap.min.css" rel="stylesheet">
+
+  <style>
+    .bd-placeholder-img {
+      font-size: 1.125rem;
+      text-anchor: middle;
+      -webkit-user-select: none;
+      -moz-user-select: none;
+      user-select: none;
+    }
+
+    @media (min-width: 768px) {
+      .bd-placeholder-img-lg {
+        font-size: 3.5rem;
+      }
+    }
+  </style>
+
+
+  <!-- Custom styles for this template -->
+  <link href="https://fonts.googleapis.com/css?family=Playfair&#43;Display:700,900&amp;display=swap" rel="stylesheet">
+  <!-- Custom styles for this template -->
+  <link href="css/blog.css" rel="stylesheet">
+</head>
+
+<body>
+
+  <div class="container text-white rounded bg-dark mb-2">
+    <header class="blog-header py-3">
+      <div class="align-items-center">
+        <div class="text-center">
+          <h1 class="display-2">TaskManager</h1>
+        </div>
+
+      </div>
+    </header>
+  </div>
+
+  <main class="container">
+    <div class="row g-5">
+      <div class="col-md-8">
+
+        <article class="blog-post">
+          <h2 class="blog-post-title">Project description</h2>
+          <p class="blog-post-meta">edited September 21, 2024</p>
+          <p>There is simple project, that let you write and mark tasks in open browser. It used TypeScript to write
+            source, than
+            it compile code in JavaScript. Page should be hosted via http-server, eslint using for tracking purpose. For
+            web-site I used bootstrap template.
+          </p>
+          <hr>
+
+          <h4>Input</h4>
+          <div id="taskmanager-div" class="blog-post">
+            <div class="blog-post">
+              <input type="text" id="task-title" placeholder="Task title">
+              <input type="text" id="task-desc" placeholder="Task description">
+              <select id="task-priority">
+                <option value="low">Low</option>
+                <option value="normal">Normal</option>
+                <option value="high">High</option>
+              </select>
+              <button id="add-task-btn">Add Task</button>
+            </div>
+
+            <div class="blog-post">
+              <h4>Tasks list</h4>
+              <small>Press on Completion cell to complete task</small>
+              <table id="task-table" class="table table-hover">
+                <thead>
+                  <tr>
+                    <th>Name</th>
+                    <th>Description</th>
+                    <th>Priority</th>
+                    <th>Date</th>
+                    <th>Completion</th>
+                  </tr>
+                </thead>
+                <tbody id="task-table-body">
+                  
+                </tbody>
+              </table>
+              <button id="clear-completed-btn">Clear Completed Tasks</button></tfooter>
+            </div>
+          </div>
+
+          <hr>
+
+          <h2>Branch feature/module</h2>
+          <p>This branch refactor code to make more clear structure of project with modules TypeScript code.</p>
+          <ul>
+            <li>Changed structure of src folders.</li>
+            <li>Instead index.js now main.js is entrance to program.</li>\
+          </ul>
+          
+
+          <h2>Branch feature/tsconfig</h2>
+          <p>The main target of this branch is add WEB interface and test source TypeScript code.</p>
+          <ul>
+            <li>Added tsconfig and configure it to make folders src/ for source and dist/ for compiled JS files</li>
+            <li>Added html-server for hosting web-page in local</li>
+            <li>Show functionality called in NodeJS and Web</li>
+            <li>Changed index.ts for realisaton of functionality for use in browser.</li>
+            <li>Added eslint and tseslint for tracking of errors.</li>
+            <li>Inlcuded bootstrap template for site appearance</li>
+            <li>Put classes in different files(modules)</li>
+            <li>Added .gitignore</li>
+          </ul>
+          
+          <h2>Branch feature/js-to-ts</h2>
+          <p>It created Taskmanager source code written in TypeScript and used for demonstration of using merges.</p>
+
+          <ul>
+            <li>Written in JS TaskManager code</li>
+            <li>Translated it to TS</li>
+            <li>Written Readme</li>
+          </ul>
+
+
+          <h2>Used assets</h2>
+          <p>List of languages, technologies, frameworks etc that I used for my project.
+          <p>
+
+          <ol>
+            <li>Main language: TypeScript/JavaScript</li>
+            <li>Local runtime: NodeJS</li>
+            <li>For hosting page: html-server</li>
+            <li>Package manager: npm</li>
+            <li>Source control: Git & GitHub</li>
+            <li>Addtional packages: Eslint, TsEslint</li>
+          </ol>
+        </article>
+      </div>
+
+      <div class="col-md-4">
+        <div class="position-sticky" style="top: 2rem;">
+          <div class="p-4 mb-3 bg-light rounded">
+            <h4 class="fst-italic">About</h4>
+            <p class="mb-0">Repository of task manager program for practice mainly in TypeScript. Developed by Solodkyi
+              Yaroslav, student of PD-42 group</p>
+          </div>
+
+          <div class="p-4">
+            <h4 class="fst-italic">Branches</h4>
+            <ol class="list-unstyled mb-0">
+              <li><a href="https://github.com/Goodwin251/TypeScriptPractice1">main</a></li>
+              <li><a href="https://github.com/Goodwin251/TypeScriptPractice1/tree/develop">develop</a></li>
+              <li><a href="https://github.com/Goodwin251/TypeScriptPractice1/tree/js-to-ts">feature/js-to-ts</a></li>
+              <li><a href="https://github.com/Goodwin251/TypeScriptPractice1/tree/feature/tsconfig">feature/tsconfig</a>
+              </li>
+            </ol>
+          </div>
+
+          <div class="p-4">
+            <h4 class="fst-italic">My social media</h4>
+            <ol class="list-unstyled">
+              <li><a href="https://github.com/Goodwin251">GitHub</a></li>
+              <li><a href="https://www.linkedin.com/in/yaroslavsolodkyi/">LinkedIn</a></li>
+            </ol>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </main>
+
+  <footer class="blog-footer">
+    <p>Developed by Solodkyi Yaroslav</p>
+    <p>
+      <a href="#">Back to top</a>
+    </p>
+  </footer>
+
+  <script src="dist/index.js" type="module" defer></script>
+  <script src="dist/components/TaskManager.js" type="module"></script>
+  <script src="dist/components/Task.js" type="module"></script>
+</body>
+
+</html>

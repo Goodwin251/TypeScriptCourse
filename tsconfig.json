@@ -1,0 +1,23 @@
+{
+  "compilerOptions": {
+    /* Projects */
+    "target": "es2022",                                 
+
+    /* Modules */
+    "module": "ES6",                               
+    "rootDir": "./src/",                                   
+    "moduleResolution": "node",
+    /* Emit */
+       "outDir": "./dist",                                  
+
+    /* Interop Constraints */
+    "esModuleInterop": true,                             
+    "forceConsistentCasingInFileNames": true,            
+
+    /* Type Checking */
+    "strict": true,                                     
+
+    /* Completeness */
+    "skipLibCheck": true                                 
+  }
+}

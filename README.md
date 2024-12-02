@@ -102,3 +102,37 @@ Overall repository for all projects made for projects made for univercity course
 1. Реалізуйте систему версіонування контенту
 
 ---
+
+### [pr-7](https://github.com/Goodwin251/TypeScriptCourse/tree/feature/pr-7)
+
+1. Набути практичних навичок роботи з TypeScript, зокрема з використанням Enum, через створення системи управління навчальним процесом університету.
+
+2. Додати enums
+    1. StudentStatus
+    1. CourseType
+    1. Semester
+    1. Grade
+    1. Faculty
+
+4. Додати інтерфейси
+    1. Student 
+    1. Course 
+    1. Grade 
+
+5. Додати функції до UniversityManagmentSystem class
+    1. enrollStudent(student: Omit<Student, "id">): Student
+    1. registerForCourse(studentId: number, courseId: number): void
+    1. setGrade(studentId: number, courseId: number, grade: Grade): void
+    1. updateStudentStatus(studentId: number, newStatus: StudentStatus): void
+    1. getStudentsByFaculty(faculty: Faculty): Student[]
+    1. getStudentGrades(studentId: number): Grade[]
+    1. getAvailableCourses(faculty: Faculty, semester: Semester): Course[]
+    1. calculateAverageGrade(studentId: number): number
+
+6. Виконати вимоги
+    1. Реалізуйте перевірку на можливість реєстрації на курс (перевірка кількості студентів, відповідність факультету)
+    1. Додайте валідацію при зміні статусу студента
+    1. Реалізуйте перевірку на можливість виставлення оцінки (чи зареєстрований студент на курс)
+    1. Створіть метод для отримання списку відмінників по факультету
+
+---
